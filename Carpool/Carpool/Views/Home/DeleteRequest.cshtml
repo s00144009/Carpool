@@ -1,0 +1,73 @@
+﻿@model Carpool.Models.RequestLift
+
+@{
+    ViewBag.Title = "DeleteRequest";
+}
+<br />
+<br />
+<br />
+<h2>Delete Request</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<h4>Please make sure you have notified the driver first. Email address below.</h4>
+<div>
+    <h4>RequestLift</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutboundTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutboundTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InboundTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InboundTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DriverEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DriverEmail)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Carpool.Models.RequestLift>
+
+@if (Model.Count() != 0)
+{
+    <h4>Responded One Off Lifts</h4>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutboundTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InboundTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookingStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutboundTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InboundTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bookingStatus)
+        </td>
+
+        <td>
+            @Html.ActionLink("Delete", "DeleteRequest", "Home", new { id = item.RequestId, @class = "btn-danger btn-xs" }, null ) |
+            @Html.ActionLink("View Lift", "ViewLift", "Home", new { id = item.DriverId, @class = "btn-success btn-xs" }, null)
+        </td>
+    </tr>
+}
+
+</table>
+}
+else
+{
+    @Html.Label("You have no replies for regular lifts")
+}

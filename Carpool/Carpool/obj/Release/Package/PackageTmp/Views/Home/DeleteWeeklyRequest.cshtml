@@ -1,0 +1,269 @@
+﻿@model Carpool.Models.RequestWeeklyLift
+
+@{
+    ViewBag.Title = "DeleteWeeklyRequest";
+}
+<br />
+<br />
+<br />
+<h2>Delete Weekly Request</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<h4>Please make sure you have notified the driver first. Email address below.</h4>
+<body>
+    <div>
+        <div class="col-md-4">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.StartPoint)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.StartPoint)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EndPoint)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EndPoint)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DriverEmail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DriverEmail)
+                </dd>
+                <dt>
+                    @Html.DisplayName("Outbound Time")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.OutboundTime)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Inbound Time")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.InboundTime)
+                </dd>
+
+                @if (Model.Description != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Description")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                }
+
+
+
+            </dl>
+        </div>
+        <div class="col-md-4">
+            <dl class="dl-horizontal">
+
+                @if (Model.Monday == true)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Monday)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Monday)
+                    </dd>
+                }
+                @if (Model.MondayStartTime != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Monday Start Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.MondayStartTime)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Monday End Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.MondayEndTime)
+                    </dd>
+                }
+
+                @if (Model.Tuesday == true)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Tuesday)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Tuesday)
+                    </dd>
+                }
+                @if (Model.TuesdayStartTime != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Tuesday Start Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.TuesdayStartTime)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Tuesday End Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.TuesdayEndTime)
+                    </dd>
+
+                }
+
+                @if (Model.Wednesday == true)
+                {
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Wednesday)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Wednesday)
+                    </dd>
+                }
+                @if (Model.WednesdayStartTime != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Wednesday Start Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.WednesdayStartTime)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Wednesday End Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.WednesdayEndTime)
+                    </dd>
+                }
+                @if (Model.Thursday == true)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Thursday)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Thursday)
+                    </dd>
+                }
+                @if (Model.TuesdayStartTime != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Thursday Start Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ThursdayStartTime)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Thursday End Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ThursdayEndTime)
+                    </dd>
+                }
+                @if (Model.Friday == true)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Friday)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Friday)
+                    </dd>
+                }
+                @if (Model.FridayStartTime != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Friday Start Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FridayStartTime)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Friday End Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FridayEndTime)
+                    </dd>
+                }
+                @if (Model.Saturday == true)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Saturday)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Saturday)
+                    </dd>
+                }
+                @if (Model.SaturdayStartTime != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Saturday Start Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.SaturdayStartTime)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Saturday End Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.SaturdayEndTime)
+                    </dd>
+                }
+                @if (Model.Sunday == true)
+                {
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Sunday)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Sunday)
+                    </dd>
+                }
+                @if (Model.SundayStartTime != null)
+                {
+                    <dt>
+                        @Html.DisplayName("Sunday Start Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.SundayStartTime)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Sunday End Time")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.SundayEndTime)
+                    </dd>
+                }
+
+            </dl>
+        </div>
+        <div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "ViewWeeklyLifts")
+                </div>
+            }
+        </div>    
+    </div>        
+</body>
+

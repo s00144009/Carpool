@@ -1,0 +1,22 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+<br />
+<br />
+<h2 class="text-danger">Error.</h2>
+@{
+    if (String.IsNullOrEmpty(ViewBag.errorMessage))
+    {
+        <h3 class="text-danger">There are requests on this lift. Please make sure to respond to all requests and then remove them,
+    <br /> then you can delete the lift.</h3>
+    @Html.ActionLink("Back", @Model.ActionName, @Model.ControllerName)
+    }
+    else
+    {
+        <h2 class="text-danger">@ViewBag.errorMessage</h2>
+    }
+}
+
+

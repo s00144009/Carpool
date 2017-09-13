@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Carpool.Models.Lift>
+
+@if (Model.Count() != 0)
+{
+<table id="liftTable" class="table table-striped table-bordered" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Start Point</th>
+            <th>End Point</th>
+            <th>One Way Lift</th>
+            <th>Outbound Start Time</th>
+            <th>Outbound End Time</th>
+            <th>Inbound Start Time</th>
+            <th>Inbound End Time</th>
+            <th>Lift Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartPoint)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndPoint)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OneWayLift)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OutboundStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OutboundEndTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InboundStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InboundEndTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LiftDate)
+                </td>
+                <td>
+                    @Html.ActionLink("View Lift", "ViewLift", new { id = item.LiftID }, new { @class = "btn-success btn-xs" })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+}
+else
+{
+    @Html.Label("No college lifts have been posted")
+}
+

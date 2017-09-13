@@ -1,0 +1,83 @@
+﻿@model Carpool.Models.Lift
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<br />
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this? Before you do please make sure all requests have been dealt with.</h3>
+<div>
+    <h4>Lift</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LiftDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LiftDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutboundStartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutboundStartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutboundEndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutboundEndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InboundStartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InboundStartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InboundEndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InboundEndTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,309 @@
+﻿@model Carpool.Models.Lift
+
+@{
+    ViewBag.Title = "ViewLift";
+}
+@*<body onload="GetMap()">*@
+<br />
+<br />
+<br />
+<h2>View Lift</h2>
+<br />
+<body>
+    <div>
+         <div class="col-md-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.StartPoint)
+                    </dt>
+
+                    <dd id="startPoint">
+                        @Html.DisplayFor(model => model.StartPoint)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EndPoint)
+                    </dt>
+
+                    <dd id="endPoint">
+                        @Html.DisplayFor(model => model.EndPoint)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LiftDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LiftDate)
+                    </dd>
+                    
+
+                </dl>
+                </div>
+                <div class="col-md-4">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayName("Outbound Start Time")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.OutboundStartTime)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Outbound End Time")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.OutboundEndTime)
+                        </dd>
+                        @if (Model.OneWayLift == false)
+                        {
+                        <dt>
+                            @Html.DisplayName("Inbound Start Time")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.InboundStartTime)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Inbound End Time")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.InboundEndTime)
+                        </dd>
+                        }
+                        else
+                        {
+                            <dt>
+                                @Html.DisplayName("One Way Lift")
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.OneWayLift)
+                            </dd>
+                        }
+                    </dl>
+                </div>
+                <div class="col-md-4">
+                    <dl class="dl-horizontal">
+                        @if (Model.Description != null)
+                        {
+                        <dt>
+                            @Html.DisplayName("Description")
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+                        }
+                    </dl>
+                </div>
+            </div>
+    <div>
+        <div>
+            <div id="LiftRequest-dialog" title="Request Lift" class="col-md-6">
+                @Html.Action("RequestLiftPartialView", new Carpool.Models.RequestLift())
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" id="gMap">
+
+        </div>
+        <div class="col-sm-6">
+            <p style="padding-top: 10px; padding-bottom: 10px;">
+                <button onclick="GetMap()" class="btn btn-primary">Get Directions</button>
+            </p>
+            <h1 style="text-align:center;" id="txtDirections"></h1>
+            <div id="directions">
+            </div>
+        </div>
+    </div>
+    <div id="disqus_thread"></div>
+    <script id="dsq-count-scr" src="//www-carpoolapp-com.disqus.com/count.js" async></script>
+    @Html.ActionLink("Back to List", "Index")
+</body>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://www-carpoolapp-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+@*</body>*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=&"></script>
+    <script>
+       @*function GetDirections() {
+
+        //Is value entered for starting location
+        //var startPoint = document.getElementById('startPoint').value;
+           //var endPoint = document.getElementById('endPoint').value;
+
+           var startPoint= @Html.Raw(Json.Encode(@ViewBag.StartPoint));
+           var endPoint =  @Html.Raw(Json.Encode(@ViewBag.EndPoint));
+
+        if (startPoint == null || startPoint == "") {
+            alert("Please enter location");
+        }
+
+        else
+        {
+            console.log("get map hit from else")
+            GetMap();
+        }
+
+    }*@
+
+    function GetMap() {
+
+        console.log("get map function")
+        //Clear last directions
+        document.getElementById('directions');
+
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+
+        //Get start and End locations that the user selected
+        var startLocation = @Html.Raw(Json.Encode(@ViewBag.StartPoint));
+        var endLocation =  @Html.Raw(Json.Encode(@ViewBag.EndPoint));
+
+        console.log(startLocation);
+        console.log(endLocation);
+
+        var map = new google.maps.Map(document.getElementById('gMap'), {
+
+        });
+
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('directions'));
+
+        //Map options
+        var request = {
+            origin: startLocation,
+            destination: endLocation,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            }
+        });
+    }
+
+    //Google Map
+    function GoogleMap(lat, lon) {
+        //style map
+        var styles = [
+          //Road Labels
+          {
+              featureType: "road",
+              elementType: "labels",
+              stylers: [
+                { visibility: "on" }
+              ]
+          },
+          //Road Geometry
+          {
+              featureType: "road",
+              elementType: "geometry",
+              stylers: [
+                { lightness: 100 },
+                { visibility: "simplified" }
+              ]
+          }
+        ];
+
+        var styledMap = new google.maps.StyledMapType(styles,
+          { name: "Styled Map" });
+
+        //Get center using longitude and latitude passed back from controller
+        var center = new google.maps.LatLng(lat, lon);
+
+        //Specify Map Options
+        var mapOptions = {
+            zoom: 16, //Map Zoom Level
+            center: center, //Set Map center point
+            mapTypeControlOptions: {
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+            }
+        };
+
+        //Assign Map to div
+        var map = new google.maps.Map(document.getElementById('gMap'),
+          mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: center,
+            map: map,
+            title: "@ViewBag.townName"
+        })
+
+        map.mapTypes.set('map_style', styledMap);
+        map.setMapTypeId('map_style');
+
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(center);
+    }
+
+    (function() {
+        //check if view has map and get coords
+        var hasMap =  @Html.Raw(Json.Encode(@ViewBag.hasMap));
+        var long =  @Html.Raw(Json.Encode(@ViewBag.Long));
+        var lat =  @Html.Raw(Json.Encode(@ViewBag.Lat));
+
+        if (long != null && lat != null) {
+            console.log("lat and long available");
+            GoogleMap(lat, long);
+        }
+
+
+    })();
+
+
+
+    </script>
+    <style>
+        #gMap {
+            height: 500px;
+        }
+
+        #directions {
+            float: right;
+        }
+    </style>
+}
+<style>
+    #details {
+        float: left;
+    }
+
+    #LiftRequest-dialog {
+        float: left;
+        width: 100%
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .description{
+        width:200px;
+        height:100px;
+    }
+</style>
+

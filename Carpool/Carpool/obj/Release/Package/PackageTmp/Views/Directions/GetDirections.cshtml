@@ -1,0 +1,238 @@
+﻿<br />
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-sm-6" id="gMap">
+
+    </div>
+    <div class="col-sm-6">
+        <h3>Please enter your start and end points.</h3>
+        <input type="text" placeholder="Enter your starting point" id="startPoint">
+        <input type="text" placeholder="Enter your starting point" id="endPoint">
+        <p style="padding-top: 10px; padding-bottom: 10px;">
+            <button onclick="GetDirections()" class="btn btn-success">Get Directions</button>
+        </p>
+        <h1 style="text-align:center;" id="txtDirections"></h1>
+        <div id="directions">
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDBthan2ga94Vh1GR8kSsUYwND2m5Ahk48&"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDBthan2ga94Vh1GR8kSsUYwND2m5Ahk48&libraries=places"></script>
+    <script>
+
+            google.maps.event.addDomListener(window, 'load', function () {
+                var options = {
+                    types: ['(cities)'],
+                    componentRestrictions: { country: "irl" }
+                };
+
+                var input = document.getElementById('startPoint');
+                var input2 = document.getElementById('endPoint');
+                var places = new google.maps.places.Autocomplete(input, options);
+                var places2 = new google.maps.places.Autocomplete(input2, options);
+
+
+            });
+            //Find Directions
+            function GetDirections() {
+
+                //Is value entered for starting location
+                var startPoint = document.getElementById('startPoint').value;
+                var endPoint = document.getElementById('endPoint').value;
+
+                if (startPoint == null || startPoint == "") {
+                    alert("Please enter location");
+                }
+
+                else
+                {
+                    console.log("get map hit from else")
+                    GetMap();
+                }
+
+            }
+
+            function GetMap() {
+
+                console.log("get map function")
+                //Clear last directions
+                document.getElementById('directions').innerHTML = "";
+                txtDirections.innerHTML = "";
+
+                var directionsService = new google.maps.DirectionsService();
+                var directionsDisplay = new google.maps.DirectionsRenderer();
+                //var routeboxer = new RouteBoxer();
+                //var distance = 0.01; // km
+
+                //directionService.route(request, function(result, status) {
+                //    if (status == google.maps.DirectionsStatus.OK) {
+                //        directionsRenderer.setDirections(result);
+
+                //        // Box around the overview path of the first route
+                //        var path = result.routes[0].overview_path;
+                //        bounds = routeBoxer.box(path, distance);
+
+                //        searchBounds(bounds);
+                //    } else {
+                //        alert("Directions query failed: " + status);
+                //    }
+                //});
+
+                //function searchBounds(bound) {
+                //    for (var i = 0; i < bound; i++) {
+                //        (function(i) {
+                //            setTimeout(function() {
+
+                //                // Perform search on the bound and save the result
+                //                performSearch(bound[i]);
+
+                //                //If the last box
+                //                if ((bound.length - 1) === i) {
+                //                    addAllMarkers(bound);
+                //                }
+                //            }, 400 * i);
+                //        }(i));
+                //    }
+                //}
+
+
+                //function performSearch(bound) {
+                //    var request = {
+                //        bounds: bound,
+                //        keyword: 'bars'
+                //    };
+
+
+                //    currentBound = bound;
+                //    service.radarSearch(request, callback);
+                //}
+
+                //// Call back function from the radar search
+
+                //function callback(results, status) {
+                //    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+                //        console.error(status);
+                //        return;
+                //    }
+
+                //    for (var i = 0, result; result = results[i]; i++) {
+                //        // Go through each result from the search and if the place exist already in our list of places then done push it in to the array
+                //        if (!placeExists(result.id)) {
+                //            allPlaces.push(result);
+                //        }
+                //    }
+                //}
+                //Get start and End locations that the user selected
+                var startLocation = document.getElementById('startPoint').value;
+                var endLocation =  document.getElementById('endPoint').value;
+
+                console.log(startLocation);
+                console.log(endLocation);
+
+                var map = new google.maps.Map(document.getElementById('gMap'), {
+
+                });
+
+                directionsDisplay.setMap(map);
+                directionsDisplay.setPanel(document.getElementById('directions'));
+
+                //Map options
+                var request = {
+                    origin: startLocation,
+                    destination: endLocation,
+                    travelMode: google.maps.DirectionsTravelMode.DRIVING
+                };
+
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            }
+
+            //Google Map
+            function GoogleMap(lat, lon) {
+                //style map
+                var styles = [
+                  //Road Labels
+                  {
+                      featureType: "road",
+                      elementType: "labels",
+                      stylers: [
+                        { visibility: "on" }
+                      ]
+                  },
+                  //Road Geometry
+                  {
+                      featureType: "road",
+                      elementType: "geometry",
+                      stylers: [
+                        { lightness: 100 },
+                        { visibility: "simplified" }
+                      ]
+                  }
+                ];
+
+                var styledMap = new google.maps.StyledMapType(styles,
+                  { name: "Styled Map" });
+
+                //Get center using longitude and latitude passed back from controller
+                var center = new google.maps.LatLng(lat, lon);
+
+                //Specify Map Options
+                var mapOptions = {
+                    zoom: 16, //Map Zoom Level
+                    center: center, //Set Map center point
+                    mapTypeControlOptions: {
+                        mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+                    }
+                };
+
+                //Assign Map to div
+                var map = new google.maps.Map(document.getElementById('gMap'),
+                  mapOptions);
+
+                var marker = new google.maps.Marker({
+                    position: center,
+                    map: map,
+                    title: "@ViewBag.townName"
+                })
+
+                map.mapTypes.set('map_style', styledMap);
+                map.setMapTypeId('map_style');
+
+                google.maps.event.trigger(map, "resize");
+                map.setCenter(center);
+            }
+
+            (function() {
+                //check if view has map and get coords
+                var hasMap =  @Html.Raw(Json.Encode(@ViewBag.hasMap));
+                var long =  @Html.Raw(Json.Encode(@ViewBag.Long));
+                var lat =  @Html.Raw(Json.Encode(@ViewBag.Lat));
+
+                if (long != null && lat != null) {
+                    console.log("lat and long available");
+                    GoogleMap(lat, long);
+                }
+
+
+            })();
+
+            //function start(){
+            //    GetDirections();
+            //    searchBounds(bound);
+            //}
+    </script>
+    <style>
+        #gMap {
+            height: 500px;
+        }
+    </style>
+}

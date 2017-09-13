@@ -1,0 +1,72 @@
+/*=============================================
+             Theme text Color
+=============================================*/
+.banner-text .text-box .text-box-left h1 strong,
+.inner-navigation .nav > li > a:hover,
+.banner-text .text-box .text-box-right h2,
+.bainner-home .owl-theme .owl-controls .owl-buttons div:hover,
+.inner-hadding span,
+.about-inner-colum span,
+.count-meter-innar p,
+span,
+.hotels-team-inner .team-colum h4,
+#xp-footer .footer-inner ul li a:hover,
+.ourpackage-inare .text-box p,
+.ourpackage-inare .text-box ul li a,
+.services-inner .text-box p,
+.services-inner .text-box h3 a:hover,
+.package-price .badroom-package p,
+.package-detail-left .price-detail p,
+.room-feature p,
+.room-feature ul li i,
+.blog-exiting .text-box .blog-date p,
+.blog-exiting .blog-more a,
+.blog-exiting .blog-more h3 a:hover,
+.blog-detail .blog-more h4,
+.contact-us-detail ul li .contact-number h3,
+.contact-us-detail .contact-form p,
+.contact-us-detail ul li .contact-number a:hover,
+.project-iso .button-group .is-checked,
+.project-iso .button-group .button:hover,
+.room-selector .room-selector-detail p,
+.room-selector .room-selector-pricel p,
+.room-selector ul li i,
+.Checkout-deluxe .text-box p,
+.Checkout-guest p,
+.full-navgtion-left ul li a:hover,
+.full-navgtion-left ul li:hover a,
+.full-navgtion-left ul li i,
+.enter-search p,
+.search-enjoy p,
+.reserve-hotel-detail .text-box p,
+.modifay-booking .modifay-innr a:hover,
+.banner-2 .banner-text .text-box h1,
+.ourpackage-inare .text-box h3 a:hover,
+.reserve-hotel-detail .booking-1 .booking-depa label,
+.bainner-home .owl-theme .owl-controls .owl-page.active span, 
+.owl-theme .owl-controls.clickable .owl-page:hover span,
+#footer p span, 
+#footer p a,
+.folow-us ul li a:hover,
+#xp-footer .footer-inner span, 
+#xp-footer .footer-inner a,
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus
+{
+    color: #f47231;
+}
+/*=============================================
+           Theme Background Color
+=============================================*/
+.navigation-search a,
+.inner-news,
+.wellness-price .table-holder table thead tr th,
+.blog-exiting .blog-more h3 a:before,
+.blog-detail .blog-more h4:after,
+.contact-us-detail ul li i,
+.sk-folding-cube .sk-cube:before{
+    background-color: #f47231;
+}
+/*=============================================
+            Theme border Color
+=============================================*/

@@ -1,0 +1,90 @@
+﻿@model Carpool.Models.RequestLift
+
+@{
+    ViewBag.Title = "ViewRequest";
+}
+<br />
+<br />
+<h2>View Request</h2>
+
+<div>
+    <h4>RequestLift</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutboundTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutboundTime)
+        </dd>
+        @if (Model.InboundTime != null)
+        {
+        <dt>
+            @Html.DisplayNameFor(model => model.InboundTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InboundTime)
+        </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.PassengerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassengerEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("ViewRequest", "Home"))
+    {
+        <button type="submit" name="Home" value="Accept" class="btn btn-sm btn-success">Accept</button>
+        <button type="submit" name="Home" value="Reject" class="btn btn-sm btn-danger">Reject</button>
+    }
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RequestId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@*<script>
+       $('.submitButton').on('click', function (e) {
+        e.preventDefault();
+
+        $('#result').val($(this).data('value'));
+
+        $('form').submit();
+       });
+    </script>*@

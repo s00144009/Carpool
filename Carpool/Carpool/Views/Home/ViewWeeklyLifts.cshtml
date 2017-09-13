@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Carpool.Models.WeeklyLift>
+
+@{
+    ViewBag.Title = "Weekly Lifts";
+}
+
+<br/>
+<br/>
+<h2>View Weekly Lifts</h2>
+
+@if (ViewBag.userType == 0)
+{
+    <br />
+        <a href="@Url.Action("OfferWeeklyLift", "Home")" class="btn btn-success">
+            Add Recurring Journey
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        </a>
+        @Html.ActionLink("One-Off Journeys", "Home", "Home", new { @class = "btn btn-primary" })
+    <br />
+    <br />
+    if (Model.Count() != 0)
+    {
+    <table class="table table-striped table-bordered" cellspacing="0">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StartPoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndPoint)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartPoint)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndPoint)
+                </td>
+                <td>
+                    @Html.ActionLink("View Requests", "ViewWeeklyRequests", new { id = item.LiftID }) |
+                    @Html.ActionLink("Accepted Requests", "AcceptedWeeklyRequests", new { id = item.LiftID }) |
+                    @Html.ActionLink("Rejected Requests", "RejectedWeeklyRequests", new { id = item.LiftID }) |
+                    @Html.ActionLink("View Lift", "ViewWeeklyLift", new { id = item.LiftID }, new { @class = "btn-success btn-xs" }) |
+                    @Html.ActionLink("Delete", "DeleteWeeklyLift", new { id = item.LiftID }, new { @class = "btn-danger btn-xs" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    }
+    else
+    {
+        @Html.Label("You have not made any recurring lift offers yet.")
+    }
+}
+else if (ViewBag.userType == 1)
+{
+    <br>
+    @Html.ActionLink("One-Off Journeys", "Home", "Home", new { @class = "btn btn-primary" })
+    <br />
+    using (Html.BeginForm("ViewWeeklyLifts", "Home", FormMethod.Get))
+    {
+        <br/>
+        //the following are search options
+        <b> Search Option: </b>@Html.RadioButton("option", "StartPoint") <text>Start Point</text> @Html.RadioButton("option", "EndPoint") <text> End Point </text>
+        @Html.TextBox("search") <input type="submit"
+                                       name="submit"
+                                       value="Search" />
+    }
+    <br />
+    if (Model.Count() != 0)
+    {
+    <table id="LiftTable" class="table table-striped table-bordered" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartPoint)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndPoint)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OutboundStartTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InboundStartTime)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartPoint)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndPoint)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OutboundStartTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InboundStartTime)
+                    </td>
+                    <td>
+                        @Html.ActionLink("View Lift", "ViewWeeklyLift", new { id = item.LiftID }, new { @class = "btn-success btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    }
+    else
+    {
+        @Html.Label("No Journeys added just yets.")
+    }
+}
+<style>
+    .divider {
+        width: 5px;
+        height: auto;
+        display: inline-block;
+    }
+</style>

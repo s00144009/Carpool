@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Carpool.Models.RequestLift>
+
+@{
+    ViewBag.Title = "RejectedRequests";
+}
+<br />
+<br />
+<br />
+<br />
+<h2>Rejected Requests</h2>
+
+@if (Model.Count() != 0)
+{
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutboundTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InboundTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassengerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailSent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DriverId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookingStatus)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutboundTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InboundTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassengerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailSent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookingStatus)
+            </td>
+            <td>
+
+                @Html.ActionLink("View Request", "ViewRequest", new { id = item.RequestId }) |
+                @Html.ActionLink("Delete", "DeleteRequest", new { id = item.RequestId }, new { @class = "btn-success btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>
+}
+else
+{
+        @Html.Label("No Rejected Requests")
+}

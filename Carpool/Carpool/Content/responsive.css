@@ -1,0 +1,991 @@
+/* =============================================
+       mobail device responsive start
+============================================= */
+@media only screen and (max-width: 1440px) {
+    .navigation .navigation-search {
+        margin-left: 10px;
+    }
+    .inner-navigation .navbar-nav > li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #header-2 .booking {
+        margin-right: 20px;
+    }
+    .banner-2 .bainner-home .item {
+        height: 100vh;
+    }
+    .bainner-home .item {
+        height: 100vh;
+    }
+    .full-navgtion-left {
+        padding-left: 200px;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .inner-navigation .navbar-nav > li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #header-2 .booking {
+        margin-right: 5px;
+    }
+    .all-navigation {
+        top: 375px;
+    }
+    .full-navgtion-left {
+        padding-left: 0;
+    }
+    .full-navgtion .socail-infor {
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    .navigation-search input[type="submit"] {
+        font-size: 18px;
+        padding: 15px;
+    }
+    .navigation-search input[type="search"] {
+        border: 5px solid #5a676f;
+        height: 49px;
+    }
+    .navigation .navigation-search {
+        margin-left: 0;
+    }
+    .navigation .inner-navigation {
+        padding-top: 3px;
+    }
+    .inner-navigation .navbar-nav > li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .inner-news input[type="text"] {
+        width: 335px;
+    }
+    .doots {
+        right: 66px;
+    }
+    #xp-footer .footer-inner ul li {
+        margin: 0 10px;
+    }
+    .blog-exiting .text-box {
+        left: 90px;
+    }
+    .booking-information-inner span {
+        display: inline-block;
+        font-size: 14px;
+        padding-left: 4px;
+    }
+    .ourpackage-inare .text-box {
+        height: 90%;
+        left: 20px;
+        top: 20px;
+        width: 87%;
+    }
+    #header-2 .navigation-search input[type="submit"] {
+        padding: 43px 35px 38px;
+    }
+    #header-2 .navigation-search input[type="search"] {
+        width: 60%;
+    }
+    #header-2 .booking .btn {
+        padding: 22px 10px 20px 15px;
+    }
+    #header-2 .logo img {
+        width: 60%;
+    }
+    #header-2 .navbar-collapse.collapse{
+        padding: 0;
+    }
+    .inner-navigation .nav > li > a {
+        font-weight: normal;
+    }
+}
+@media only screen and (max-width: 991px)  {
+    #header-2 .navigation .inner-navigation {
+        display: inline-block;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .navigation .navigation-search {
+        display: inline-block;
+    }
+    .banner-text .text-box {
+        text-align: center;
+        width: 100%;
+    }
+    .banner-text .text-box .text-box-left h1{
+        font-size: 100px;
+    }
+    .banner-text .text-box .text-box-right {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .banner-text .text-box .text-box-right p {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .banner-text .text-box .text-box-right h2 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .banner-text .text-box .text-box-right span {
+        letter-spacing: 0;
+        margin-top: 15px;
+    }
+    .count-meter .count-meter-innar{
+        margin-bottom: 20px;
+    }
+    .about-parking {
+        padding-top: 51px;
+    }
+    .tinos-staff .text-box {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .hotels-team {
+        bottom: 0;
+        margin-top: 80px;
+    }
+    .hotels-team-inner {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .hotels-team-inner .team-colum {
+        float: left;
+        margin-right: 25px;
+        width: 31%;
+    }
+    .inner-news {
+        padding: 30px 0;
+    }
+    .inner-news form{
+        margin-top: 30px;
+    }
+    .doots{
+        display: none;
+    }
+    #xp-footer .footer-inner{
+        text-align: center;
+    }
+    #xp-footer .footer-inner ul {
+        padding-top: 43px;
+        text-align: center;
+    }
+    .blog-exiting .text-box {
+        background: none;
+        bottom: 0;
+        padding: 30px 0;
+        left: 0;
+    }
+    .blog-exiting .text-box .blog-date {
+        left: 0;
+        margin-right: 50px;
+    }
+    .shade-detail .old-boil a {
+        font-size: 14px;
+    }
+    .shade-detail .participating::after {
+        left: -30px;
+    }
+    .room-selector .text-hover {
+        width: 100%;
+    }
+    .room-selector .text-hover-inner {
+        width: 94%;
+        padding: 98px 0 100px;
+    }
+    .rooms-rates-inner .room-selector::after {
+        left: 10%;
+    }
+    .contact-us-inner .map {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .ourpackage-inare .text-box {
+        height: 88%;
+        left: 20px;
+        top: 19px;
+        width: 82%;
+    }
+    .photo-section .project-iso .button-group {
+        margin: 0 auto 30px;
+        padding: 25px 0;
+        width: 100%;
+    }
+    .project-iso .button-group .button {
+        padding: 0 10px;
+    }
+    .project-iso-inner .text-hover .text-hove-inner {
+        width: 90%;
+    }
+    #header-2 .navbar-toggle {
+        display: block;
+    }
+    #header-2 .navbar-collapse.collapse {display: none !important;}
+    #header-2 .collapse.in {
+        display: block !important;
+    }
+    #header-2 .navigation-search input[type="search"] {
+        width: inherit;
+    }
+    #header-2 .navbar-collapse{
+        padding: 0;
+    }
+    #header-2 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        background-color: #ffffff;
+        border-color: rgba(0, 0, 0, 0);
+        left: -137px;
+        position: absolute;
+        top: 72px;
+        width: 200px;
+    }
+    #header-2  .inner-navigation .navbar-nav > li {
+        float: none;
+        margin: 0;
+        text-align: left;
+    }
+    .navigation .inner-navigation {
+        padding-bottom: 20px;
+    }
+    #header-2 .pull-right{
+        float: none !important;
+    }
+    #header-2 .inner-navigation .nav > li > a {
+        padding: 7px 10px;
+    }
+    #header-2  .navbar-nav {
+        padding: 10px 0;
+    }
+    #header-2 .navbar-toggle{
+        background-color: #f47231;
+        border: none;
+        border-radius: 0;
+    }
+    #header-2 .navbar-default .navbar-toggle .icon-bar{
+        background-color: #fff;
+    }
+    #header-2 .logo img {
+        width: inherit;
+    }
+    .search-open-inner .full-header logo img{
+        display: inline-block;
+        float: left;
+    }
+    .full-header .logo {
+        padding: 0;
+    }
+    .open-search-inner {
+        top: 220px;
+    }
+    .enter-search p {
+        padding-bottom: 30px;
+    }
+    .enter-search .btn {
+        margin-top: 30px;
+    }
+    .search-enjoy {
+        margin-top: 41px;
+    }
+    .search-enjoy ul {
+        margin-top: 15px;
+    }
+    .search-enjoy ul li a {
+        padding-bottom: 10px;
+    }
+    .reserve-hotel-inner {
+        top: 200px;
+    }
+    .all-navigation {
+        top: 220px;
+    }
+    #header-2 .navigation {
+        position: inherit;
+        right: 0;
+        text-align: right;
+        top: 0;
+        width: 100%;
+    }
+    .navigation .inner-navigation {
+        display: block;
+    }
+    .reserve-booking{
+        display: inline-block;
+        margin: 0;
+        margin-left: 30px;
+        float: none;
+    }
+    .reserve-hotel-detail .booking-1 .booking-depa {
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 767px)  {
+    .navigation {
+        position: absolute;
+        right: 0;
+        text-align: right;
+        top: -285px;
+        width: 100%;
+    }
+    #header-2 .logo img {
+        width: inherit;
+    }
+    .inner-navigation .navbar-toggle{
+        border: none;
+        background-color: #f47231;
+        border-radius: 0;
+    }
+    .inner-navigation  .navbar-default .navbar-toggle .icon-bar{
+        background-color:  #fff;
+    }
+    #header-2 .booking .btn {
+        padding: 10px 10px 16px 15px;
+    }
+    #header-2 .navigation-search input[type="search"] {
+        height: 83px;
+        width: 60%;
+    }
+    #header-2 .navigation-search input[type="submit"] {
+        padding: 35px 26px 30px;
+    }
+    #header-2 .navbar-toggle {
+        border-radius: 0;
+        margin-bottom: 0;
+        margin-right: 10px;
+        margin-top: 0;
+    }
+    #header-2 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        left: -146px;
+        top: 57px;
+    }
+    .inner-navigation .navigation-search {
+        margin-right: 15px;
+    }
+    .inner-navigation .navbar-nav {
+        margin: 0;
+        text-align: left;
+    }
+    .inner-navigation .pull-right{
+        float: none !important;
+    }
+    .inner-navigation .nav > li > a{
+        color: #333;
+        padding: 10px 0;
+    }
+    .banner-text .text-box .text-box-left h1 {
+        font-size: 74px;
+    }
+    .banner-text .text-box .text-box-left h1 strong {
+        font-size: 34px;
+    }
+    .banner-text .text-box .text-box-right h2 {
+        font-size: 44px;
+        line-height: 44px;
+    }
+    .banner-text .text-box .text-box-right span {
+        font-size: 12px;
+    }
+    .bainner-home .owl-theme .owl-controls {
+        left: 0px;
+        width: 100%;
+    }
+    #header-inner .navigation-inner {
+        margin-left: 0;
+        position: absolute;
+        right: 0;
+        text-align: right;
+        top: -145px;
+    }
+    .main-containt{
+        margin-top: 50px;
+    }
+    .hotel-about-inner .image-holder {
+        margin-bottom: 50px;
+    }
+    .about-inner-colum {
+        margin-bottom: 30px;
+    }
+    .hotel-about {
+        padding-bottom: 16px;
+    }
+    .about-parking {
+        padding-top: 21px;
+    }
+    .about-parking p {
+        padding-bottom: 41px;
+    }
+    .about-parking-colum{
+        margin-bottom: 30px;
+    }
+    .hottel-staff {
+        margin-top: 20px;
+    }
+    .tinos-staff .text-box {
+        margin: 21px auto 0;
+    }
+    .hotels-team {
+        bottom: 0;
+        margin-top: 45px;
+    }
+    .hotels-team-inner .team-colum {
+        margin-bottom: 30px;
+        margin-right: 10px;
+        width: 46%;
+    }
+    .blog-exiting .blog-more h3 a {
+        font-size: 20px;
+        padding-bottom: 24px;
+    }
+    .blog-exiting .blog-more p {
+        font-size: 16px;
+        padding-top: 20px;
+    }
+    .old-boil {
+        text-align: center;
+    }
+    .shade-detail .participating::after {
+        display: none;
+        left: 0;
+    }
+    .shade-detail .participating {
+        position: relative;
+        text-align: center;
+    }
+    .shade-detail .old-boil a {
+        padding: 10px 0;
+    }
+    .Checkout-deluxe {
+        padding-bottom: 45px;
+        width: 100%;
+    }
+    .Checkout-guest {
+        margin-top: 45px;
+        padding-bottom: 26px;
+    }
+    .Checkout-guest::after {
+        left: 0;
+        width: 100%;
+    }
+    .Checkout-guest form {
+        margin-top: 20px;
+    }
+    .Checkout-guest .form-group {
+        margin-bottom: 25px;
+    }
+    .Checkout-guest .form-group label {
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+    .Checkout-guest .form-group select {
+        background: #292929 url("../images/selector-image.png") no-repeat scroll 95% 50%;
+    }
+    .Checkout-guest .card-num {
+        margin-top: 0;
+    }
+    .booking-information-inner p {
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+    .booking-information-inner {
+        margin-top: 20px;
+    }
+    .booking-information-inner .btn {
+        margin-top: 45px;
+    }
+    .Checkout-deluxe .text-box{
+        margin-top: 25px;
+    }
+    .Checkout-deluxe .text-box h3 {
+        padding-bottom: 20px;
+    }
+    .Checkout-deluxe {
+        padding-bottom: 46px;
+    }
+    .Checkout-deluxe::after {
+        left: 0;
+        width: 100%;
+    }
+    .room-selector .image-holder {
+        margin-bottom: 25px;
+    }
+    .room-selector .room-selector-pricel {
+        margin-top: 20px;
+    }
+    .room-selector ul{
+        margin: 21px 0;
+    }
+    .room-selector .room-selector-detail p {
+        margin-bottom: 0;
+    }
+    .rooms-rates-inner .room-selector {
+        margin-bottom: 50px;
+        padding-bottom: 46px;
+    }
+    .load-more {
+        margin-top: 23px;
+    }
+    .rooms-rates-inner .room-selector::after {
+        left: 0;
+        width: 100%;
+    }
+    .room-selector .text-hover-inner {
+        height: 100%;
+        padding: 117px 0;
+        width: 100%;
+    }
+    .contact-us-detail {
+        margin-top: 42px;
+    }
+    .contact-us-detail ul li {
+        margin-bottom: 25px;
+    }
+    .contact-form {
+        margin-top: 38px;
+    }
+    .contact-form form {
+        margin-top: 19px;
+    }
+    .contact-us-detail .contact-form label {
+        margin-bottom: 10px;
+    }
+    .ourpackage-inare .text-box {
+        height: 92%;
+        left: 20px;
+        top: 19px;
+        width: 89%;
+    }
+    .package-detail {
+        padding: 0;
+    }
+    .package-price .badroom-package {
+        padding-bottom: 20px;
+    }
+    .package-detail-left .package-price {
+        padding-bottom: 45px;
+    }
+    .room-booking {
+        margin-top: 44px;
+    }
+    .package-detail-right {
+        padding-left: 0;
+        padding-top: 42px;
+    }
+    .room-right-inner P {
+        font-size: 14px;
+        margin-top: 17px;
+    }
+    .room-feature {
+        margin-top: 38px;
+    }
+    .project-iso .button-group .button {
+        padding: 0 5px;
+    }
+    .wellness-spa .about-inner-colum {
+        margin-bottom: 17px;
+    }
+    .wellness-spa .hotel-about {
+        padding-bottom: 22px;
+    }
+    .wellness-holder {
+        margin-bottom: 44px;
+        margin-top: 44px;
+    }
+    .wellness-sec p {
+        font-size: 14px;
+        padding: 0;
+    }
+    .wellness-price {
+        margin-bottom: 0;
+        margin-top: 44px;
+    }
+    .wellness-price .table-holder table thead tr th {
+        padding: 20px 30px;
+    }
+    .wellness-price .table-holder table tbody tr td {
+        padding: 20px 30px;
+    }
+    .reserve-hotel-detail .text-box {
+        margin-bottom: 10px;
+    }
+    .modifay-booking .modifay-innr a {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .modifay-booking .modifay-innr::after{
+        display: none;
+    }
+    .full-navgtion .socail-infor {
+        padding: 15px;
+        width: 100%;
+    }
+    #header-2 .navigation-search a {
+        padding: 25px 30px;
+    }
+    #header-2 .navigation-search .folow-us {
+        padding: 31px 25px 31px 35px;
+    }
+    #header-2 .navigation-search .folow-us ul {
+        top: 30px;
+    }
+}
+@media only screen and (max-width: 640px)  {
+    .room-selector .text-hover-inner {
+        padding: 95px 0;
+    }
+    .ourpackage-inare .text-box {
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .project-iso-inner .image-holder img{
+        width: 100%;
+    }
+    .project-iso .col-xs-4, .project-iso .col-xs-8{
+        width: 100%;
+    }
+    .open-search-inner .enter-search {
+        width: 100%;
+    }
+    .full-header {
+        padding: 20px 0;
+    }
+    .enter-search input[type="text"] {
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 600px)  {
+    .banner-text .text-box .text-box-left {
+        display: block;
+    }
+    .banner-text .text-box .text-box-right {
+        display: block;
+        margin-top: 20px;
+    }
+    #header-2 .navigation-search .folow-us {
+        padding: 31px 10px;
+    }
+    #header-2 .navigation-search a {
+        padding: 25px 20px;
+    }
+    #header-2 .navbar-toggle {
+        margin-right: 15px;
+    }
+    .banner-2 .banner-text .text-box h1 {
+        font-size: 34px;
+        padding-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 550px)  {
+    .blog-exiting .text-box .blog-date {
+        margin-right: 20px;
+    }
+    .room-selector .text-hover-inner {
+        padding: 75px 0;
+    }
+    #header-2 .logo img {
+        width: 60%;
+    }
+    .full-navgtion-left ul li a {
+        font-size: 14px;
+        font-weight: normal;
+    }
+}
+@media only screen and (max-width: 479px)  {
+    .banner-text {
+        padding-top: 190px;
+    }
+    .banner-2 .banner-text {
+        padding-top: 0;
+    }
+    .about-inner-colum h2 {
+        font-size: 20px;
+    }
+    #header-inner {
+        padding: 20px 0 0;
+    }
+    #header-inner .navigation-inner {
+        right: 16px;
+    }
+    .about-inner-colum p {
+        font-size: 14px;
+    }
+    .count-meter .col-xs-6{
+        width: 100%;
+    }
+    .about-parking p {
+        font-size: 16px;
+    }
+    .about-parking {
+        padding-top: 24px;
+        padding-bottom: 44px;
+    }
+    .about-parking {
+        padding-bottom: 0;
+    }
+    .tinos-staff .text-box h3 {
+        font-size: 30px;
+    }
+    .hotels-team-inner .team-colum {
+        margin-bottom: 30px;
+        margin-right: 0;
+        width: 100%;
+    }
+    .inner-news input[type="text"] {
+        width: 65%;
+    }
+    .inner-news {
+        padding: 20px 0;
+    }
+    .inner-news form {
+        margin-top: 20px;
+    }
+    #xp-footer .footer-inner ul li {
+        margin: 0 5px 10px;
+    }
+    #xp-footer .footer-inner ul {
+        padding-top: 20px;
+    }
+    #xp-footer {
+        padding-bottom: 20px;
+        padding-top: 120px;
+    }
+    .blog-exiting .text-box .blog-date {
+        margin-right: 0;
+        margin-bottom: 20px;
+        float: none;
+        top: 0;
+    }
+    .blog-exiting .blog-more {
+        float: none;
+        left: 0;
+        position: inherit;
+        width: 100%;
+    }
+    .blog-exiting .blog-more h3 a::after {
+        width: 100%;
+    }
+    .blog-detail .blog-more h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-top: 40px;
+        padding-left: 20px;
+    }
+    .shade-detail {
+        margin-top: 45px;
+    }
+    .blog-detail .blog-more .cooments {
+        margin-top: 44px;
+    }
+    .Checkout-deluxe .text-box h3 {
+        font-size: 20px;
+    }
+    .Checkout-deluxe .text-box h4 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .booking-information-inner .btn {
+        padding: 15px 0;
+        width: 100%;
+    }
+    .room-selector .text-hover-inner {
+        padding: 59px 0;
+    }
+    .room-selector .image-holder > img {
+        height: 198px;
+    }
+    .room-selector .room-selector-detail h3 {
+        font-size: 20px;
+    }
+    .room-selector .room-selector-pricel h3 {
+        font-size: 20px;
+    }
+    .contact-us-inner .contact-map {
+        height: 300px;
+    }
+    .our-packages .col-xs-6, .our-services .col-xs-6{
+        width: 100%;
+    }
+    .ourpackage-inare .image-holder img{
+        width: 100%;
+    }
+    .package-price .badroom-package h3, 
+    .package-detail-left .price-detail h3 {
+        font-size: 20px;
+    }
+    .room-feature ul li {
+        width: 100%;
+    }
+    .room-feature ul li:last-child{
+        margin-bottom: 0;
+    }
+    .project-iso-inner .text-hover .text-hove-inner {
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+    .wellness-price .table-holder {
+        overflow: scroll;
+    }
+    .wellness-price .table-holder table {
+        width: 500px;
+    }
+    .mobail-logo {
+        width: 60%;
+    }
+    .mobail-nav{
+        width: 40%;
+    }
+    .full-navigation-inner{
+        padding-top: 35px;
+    }
+    .banner-2 .banner-text .text-box h1 {
+        font-size: 24px;
+        padding-bottom: 10px;
+    }
+    .navigation {
+        position: inherit;
+        top: 0;
+    }
+    .logo {
+        padding-top: 0;
+    }
+    .booking {
+        display: inline-block;
+        float: right;
+        margin-top: 0;
+    }
+    #header {
+        padding-top: 30px;
+    }
+    .navigation .navigation-search {
+        margin-right: 0;
+        position: absolute;
+        right: 0;
+        top: 30px;
+    }
+    .navigation .inner-navigation {
+        padding-bottom: 0;
+        position: absolute;
+        width: 100%;
+        top: 45px;
+    }
+    .navbar-toggle {
+        float: left;
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+    .inner-navigation .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        background-color: #ffffff;
+        border-color: inherit;
+        margin-top: 23px;
+        padding: 10px 15px;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+    .navigation-search a {
+        padding: 10px 15px;
+    }
+    .navigation-search .folow-us {
+        padding: 8px 15px 5px 20px;
+    }
+    .navigation-search .folow-us ul {
+        top: 7px;
+    }
+    .reserve-hotel .booking,
+    .full-navgtion .booking,
+    #header-inner .booking {
+        float: none;
+    }
+    #header-2 .navigation-search .folow-us {
+        display: none;
+    }
+    #header-2 .booking {
+        float: none;
+        margin-right: 5px;
+    }
+    #header-2 .navigation .navigation-search {
+        margin-right: 0;
+        position: inherit;
+        right: 0;
+        top: 0;
+    }
+    #header-2  .navigation .inner-navigation {
+        padding-bottom: 0;
+        position: inherit;
+        top: 0;
+        width: auto;
+    }
+    #header-2 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        left: -139px;
+        top: 34px;
+    }
+    #header{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .full-navgtion .col-xs-10, 
+    .full-navgtion .col-xs-2,
+    .reserve-hotel .col-xs-10, 
+    .reserve-hotel .col-xs-2,
+    .search-open .col-xs-10,
+    .search-open .col-xs-2{
+        width: 100%;
+    }
+    .reserve-booking {
+        display: inline-block;
+        float: right !important;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 379px)  {
+    .inner-hadding h2 {
+        letter-spacing: 5px;
+        padding-bottom: 5px;
+    }
+    .hedding p {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .project-iso-inner .text-hover .text-hove-inner {
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    .wellness-holder .col-xs-4, 
+    .wellness-holder .imge-holder img{
+        width: 100%;
+    }
+    #header-2 .navigation .navigation-search {
+        display: none;
+    }
+    .mobail-logo {
+        width: 80%;
+    }
+    .mobail-nav {
+        width: 20%;
+    }
+    .navigation {
+        margin-top: 23px;
+    }
+    .reserve-hotel-detail .col-xs-6, .all-navigation .col-md-6{
+        width: 100%;
+    }
+    .all-navigation {
+        top: 170px;
+    }
+    .full-navgtion-left ul li {
+        margin-bottom: 15px;
+    }
+    #header-2 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        left: -143px;
+        top: 37px;
+    }
+
+    .enter-search input[type="text"] {
+        font-size: 26px;
+        padding-bottom: 10px;
+    }
+}

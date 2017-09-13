@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Carpool.Models.RequestWeeklyLift>
+
+@{
+    ViewBag.Title = "AcceptedWeeklyRequests";
+}
+<br />
+<br />
+<h2>Accepted Weekly Requests</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutboundTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InboundTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutboundTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InboundTime)
+        </td>
+        <td>
+            @Html.ActionLink("View Weekly Request", "WeeklyRequest", new { id = item.RequestId }) |
+            @Html.ActionLink("Delete", "DeleteWeeklyRequest", new { id = item.RequestId }, new { @class = "btn-success btn-xs" })
+        </td>
+    </tr>
+}
+
+</table>

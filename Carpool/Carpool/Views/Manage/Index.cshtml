@@ -1,0 +1,105 @@
+﻿@model Carpool.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <br />
+    <br />
+    <h4>Change your account settings</h4>
+    <hr />
+    <b>Email Address:</b>    @ViewBag.Email<br />
+    <b>Phone Number:</b>    @ViewBag.PhoneNumber
+    <dl class="dl-horizontal">
+
+        <dt>Password:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
+
+        @*
+            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+             See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+             Uncomment the following block after you have set up two-factor authentication
+        *@
+        @*
+            <dt>Phone Number:</dt>
+            <dd>
+                @(Model.PhoneNumber ?? "None")
+                @if (Model.PhoneNumber != null)
+                {
+                    <br />
+                    <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
+                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
+                    }
+                }
+                else
+                {
+                    <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
+                }
+            </dd>
+        *@
+            @*@if (Model.TwoFactor)
+                {
+                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <text>Enabled
+                        <input type="submit" value="Disable" class="btn btn-link" />
+                        </text>
+                    }
+                }
+                else
+                {
+                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <text>Disabled
+                        <input type="submit" value="Enable" class="btn btn-link" />
+                        </text>
+                    }
+                }*@
+    </dl>
+</div>
+@if (User.IsInRole("Driver"))
+{
+    <div title="Past Lifts">
+        @Html.Action("PastLiftsPartialView", new Carpool.Models.Lift())
+    </div>
+}
+
+else
+{
+    <div>
+        @Html.Action("RespondedRegularPartialView", new Carpool.Models.RequestLift())
+    </div>
+    <div>
+        @Html.Action("RespondedPartialView", new Carpool.Models.RequestWeeklyLift())
+    </div>
+
+    <div>
+        @Html.Action("PendingWeeklyRequestPartialView", new Carpool.Models.RequestWeeklyLift())
+    </div>
+
+    <div>
+        @Html.Action("PendingRequestPartialView", new Carpool.Models.RequestLift())
+    </div>
+}
